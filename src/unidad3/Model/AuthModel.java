@@ -89,6 +89,58 @@ public class AuthModel {
     }
 }
 
+	public ArrayList<User> obtenerUsuarios(){
+
+			ArrayList<User> listaUsuarios = new ArrayList<>();
+
+			String query = "SELECT * FROM usuarios";
+
+			try {
+
+				Class.forName("com.mysql.cj.jdbc.Driver");
+
+				Connection conn = DriverManager.getConnection(
+					"jdbc:mysql://127.0.0.1:3306/LADYGAGA",
+					"root",
+					"Corzo050204"
+				);
+
+				Statement stmt = conn.createStatement();
+
+				ResultSet rs = stmt.executeQuery(query);
+
+				while(rs.next()){
+
+					int id = rs.getInt("id");
+
+					String username = rs.getString("username");
+
+					String nombre = rs.getString("nombre_completo");
+
+					User user = new User(
+						id,
+						username,
+						nombre
+					);
+
+					listaUsuarios.add(user);
+				}
+
+				rs.close();
+
+				stmt.close();
+
+				conn.close();
+
+			} catch(Exception e){
+
+				e.printStackTrace();
+			}
+
+			return listaUsuarios;
+
+		}
+
 
     
 }

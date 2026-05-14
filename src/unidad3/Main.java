@@ -8,14 +8,16 @@ import unidad3.View.UserView;
 public class Main {
     public static void main(String[] args) {
 
-       
 
-        AuthController controller = new AuthController();
-        controller.dasclogin();
 
-        
+        //AuthController controller = new AuthController();
+       // controller.dasclogin();
+       new UserView();
+
+
+
 
 
     }
-    
+
 }
