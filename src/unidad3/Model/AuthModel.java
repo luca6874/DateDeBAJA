@@ -24,9 +24,11 @@ public class AuthModel {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://127.0.0.1:3306/(Tu database)", 
-					"(tu usuario que posiblemente es root)", 
-					"(tu contraseña)"
+					"jdbc:mysql://127.0.0.1:3306/LADYGAGA", 
+					"root", 
+					"Corzo050204"
+
+					
 			);
 			
 			PreparedStatement ps = conn.prepareStatement(query);
