@@ -2,7 +2,7 @@ package unidad3.View;
 
 import unidad3.Model.AuthModel;
 import unidad3.Model.User;
-
+import unidad3.View.RegisterView;
 import java.util.ArrayList;
 
 import java.awt.event.ActionEvent;
@@ -84,7 +84,7 @@ public class UserView {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-               new AuthViews().registro();
+                new RegisterView(UserView.this);
             }
         });
 
