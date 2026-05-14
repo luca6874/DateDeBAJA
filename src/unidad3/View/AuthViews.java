@@ -110,13 +110,22 @@ public class AuthViews implements ActionListener {
                 }
 
                 // REGISTRO
-
                 else if (ventana.getTitle().equals("Registro")) {
 
-                    JOptionPane.showMessageDialog(
-                        ventana,
-                        "Usuario registrado"
-                    );
+                    AuthModel auth = new AuthModel();
+
+
+                    if (auth.register(username, password, username)) {
+
+                        JOptionPane.showMessageDialog(ventana, "Usuario registrado");
+
+                        ventana.dispose();
+                        dasclogin();
+
+                    } else {
+
+                        JOptionPane.showMessageDialog(ventana, "Error al registrar");
+                    }
                 }
             }
 

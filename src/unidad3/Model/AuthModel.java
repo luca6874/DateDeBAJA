@@ -56,6 +56,39 @@ public class AuthModel {
         return false;
     }
 
+	public boolean register(String username, String password, String nombre){
+
+    String query = "INSERT INTO usuarios (username, password, nombre_completo) VALUES (?, ?, ?)";
+
+    try {
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        Connection conn = DriverManager.getConnection(
+            "jdbc:mysql://127.0.0.1:3306/LADYGAGA",
+            "root",
+            "Corzo050204"
+        );
+
+        PreparedStatement ps = conn.prepareStatement(query);
+
+        ps.setString(1, username);
+        ps.setString(2, password);
+        ps.setString(3, nombre);
+
+        int result = ps.executeUpdate();
+
+        ps.close();
+        conn.close();
+
+        return result > 0;
+
+    } catch(Exception e){
+        e.printStackTrace();
+        return false;
+    }
+}
+
 
     
 }
