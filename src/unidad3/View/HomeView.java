@@ -33,14 +33,11 @@ public class HomeView {
 		ventana.setMinimumSize(new Dimension(200,200));
 		ventana.setMaximumSize(new Dimension(1000,800));
 		ventana.setLocationRelativeTo(null);
-		ventana.setTitle("Hola");
+		ventana.setTitle("darnel gei");
 		ventana.setLayout(null); 
 		ventana.getContentPane().setBackground(Color.gray); 
 
 		 
-		
-		JTextField textField;
-		JPasswordField passwordField;
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255)); 

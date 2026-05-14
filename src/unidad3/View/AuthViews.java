@@ -30,7 +30,7 @@ public class AuthViews implements ActionListener {
         ventana.setLocationRelativeTo(null);
         ventana.setLayout(null);
 
-        JLabel l1 = new JLabel("Correo");
+        JLabel l1 = new JLabel("Usuario");
         l1.setBounds(50, 50, 150, 20);
         ventana.add(l1);
 
@@ -64,12 +64,12 @@ public class AuthViews implements ActionListener {
 
             if (e.getSource() == btnAcceder) {
 
-                String correo = txtCorreo.getText().trim();
+                String username = txtCorreo.getText().trim();
                 String password = new String(
                     txtPassword.getPassword()
                 ).trim();
 
-                if (correo.isEmpty() || password.isEmpty()) {
+                if (username.isEmpty() || password.isEmpty()) {
 
                     JOptionPane.showMessageDialog(
                         ventana,
@@ -85,8 +85,8 @@ public class AuthViews implements ActionListener {
 
                     AuthModel auth = new AuthModel();
 
-                    /*
-                    if (auth.access(correo, password)) {
+                    
+                    if (auth.access(username, password)) {
 
                         JOptionPane.showMessageDialog(
                             ventana,
@@ -100,7 +100,7 @@ public class AuthViews implements ActionListener {
                             "Datos incorrectos"
                         );
                     }
-                    */
+                    
 
                     JOptionPane.showMessageDialog(
                         ventana,
